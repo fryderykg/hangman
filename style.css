@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&subset=latin-ext");
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #333;
+  background: url("pics/background-lg.jpg");
+  color: #FFF;
+  font-family: "Source Code Pro", monospace;
+  margin: 0; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap; }
+
+.container {
+  max-width: 830px;
+  margin: 0 auto;
+  text-align: center; }
+
+.hidden {
+  display: none !important; }
+
+header {
+  justify-content: center;
+  height: 100vh;
+  transition: 2s all; }
+  header.hide {
+    height: 150px; }
+    header.hide .flags {
+      transform: translateY(-200px);
+      transition: 2s all; }
+      header.hide .flags .flag_pol {
+        display: inline-block;
+        transition: 2s all;
+        transform: translateX(-120px); }
+      header.hide .flags .flag_uk {
+        display: inline-block;
+        transition: 2s all;
+        transform: translateX(120px); }
+    header.hide p {
+      opacity: 0;
+      transition: 2s all; }
+  header h1 {
+    font-size: 3em;
+    margin: 0 auto;
+    padding: 50px 30px;
+    text-align: center;
+    text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
+    text-transform: uppercase; }
+  header .flags a {
+    border-radius: 20px; }
+  header .flags img {
+    border-radius: 20px;
+    height: 50px;
+    margin: 50px 100px; }
+
+#board {
+  transition: all 2s; }
+
+.remainingChances {
+  flex: 1; }
+
+.score {
+  flex: 1; }
+
+#secretWord {
+  font-size: 24px;
+  letter-spacing: 0.2em;
+  padding: 20px;
+  text-transform: uppercase;
+  width: 100%; }
+
+.pictureAndAlphabet {
+  justify-content: center; }
+
+.opacityZero {
+  opacity: 0; }
+
+#hangmanPic {
+  max-width: 456px;
+  min-width: 456px;
+  min-height: 285px;
+  position: relative;
+  text-align: center; }
+  #hangmanPic img {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    transition: all 1.5s; }
+
+#hangmanPic,
+#alphabet {
+  flex: 1; }
+
+#alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
+.letter {
+  color: #FFF;
+  font-size: 22px;
+  line-height: 22px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 9px;
+  border: 2px solid gray;
+  cursor: pointer;
+  box-shadow: 1px 3px 5px black;
+  height: 40px;
+  margin: 5px;
+  width: 40px; }
+  .letter:hover {
+    background: #222;
+    border: 3px solid #fff;
+    background: rgba(0, 200, 0, 0.2);
+    border-color: rgba(0, 200, 0, 0.8);
+    color: rgba(0, 200, 0, 0.8); }
+  .letter:hover {
+    background: #222;
+    border: 3px solid #fff;
+    color: #FFFFFF; }
+  .letter.correct {
+    background: rgba(0, 200, 0, 0.2);
+    border-color: rgba(0, 200, 0, 0.8);
+    color: rgba(0, 200, 0, 0.8);
+    border-width: 2px;
+    cursor: not-allowed; }
+  .letter.wrong {
+    background: rgba(200, 0, 0, 0.2);
+    border-color: rgba(200, 0, 0, 0.8);
+    color: rgba(200, 0, 0, 0.8);
+    border-width: 2px;
+    cursor: not-allowed; }
+
+#message_lost,
+#message_win {
+  flex: 1; }
+  #message_lost button,
+  #message_win button {
+    color: #FFF;
+    font-size: 22px;
+    line-height: 22px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 9px;
+    border: 2px solid gray;
+    cursor: pointer;
+    box-shadow: 1px 3px 5px black;
+    background: transparent;
+    height: 50px;
+    margin: 0 auto;
+    width: 160px; }
+    #message_lost button:hover,
+    #message_win button:hover {
+      background: #222;
+      border: 3px solid #fff;
+      background: rgba(0, 200, 0, 0.2);
+      border-color: rgba(0, 200, 0, 0.8);
+      color: rgba(0, 200, 0, 0.8); }
+
+/* For tablets: */
+@media (max-width: 767px) {
+  body {
+    background: url("pics/background-md.jpg"); }
+
+  header h1 {
+    font-size: 1.5em;
+    padding: 20px; }
+  header .flags a {
+    border-radius: 20px; }
+  header .flags img {
+    border-radius: 20px;
+    height: 50px;
+    margin: 50px 40px;
+    transition: 2s; }
+  header.hide {
+    height: 80px; }
+    header.hide .flags {
+      transition: 2s all;
+      transform: translateY(-120px); }
+      header.hide .flags .flag_pol {
+        display: inline-block;
+        transition: 2s all;
+        transform: translateX(-50px); }
+      header.hide .flags .flag_uk {
+        display: inline-block;
+        transition: 2s all;
+        transform: translateX(50px); }
+      header.hide .flags img {
+        margin: 10px 10px;
+        transition: 2s;
+        transform: scale(0.7); }
+    header.hide p {
+      transform: translateY(0px); }
+
+  #secretWord {
+    font-size: 1em;
+    min-height: 0;
+    padding: 20px 10px; }
+
+  #hangmanPic {
+    display: none; } }
+@media (max-width: 850px) {
+  .pictureAndAlphabet {
+    flex-direction: column; }
+
+  #hangmanPic {
+    margin: 0 auto; } }
+
+/*# sourceMappingURL=style.css.map */

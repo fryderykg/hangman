@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&subset=latin-ext')
+
+@mixin change_color($red, $green, $blue)
+  background: rgba($red, $green, $blue, 0.2)
+  border-color: rgba($red, $green, $blue, 0.8)
+  color: rgba($red, $green, $blue, 0.8)
+
+@mixin btn
+  color: #FFF
+  font-size: 22px
+  line-height: 22px
+  border-radius: 10px
+  text-align: center
+  padding: 9px
+  border: 2px solid gray
+  cursor: pointer
+  box-shadow: 1px 3px 5px black
+  &:hover
+    background: #222
+    border: 3px solid #fff
+    @include change_color(0, 200, 0)
+
+*
+  box-sizing: border-box
+
+body
+  background: #333
+  background: url("pics/background-lg.jpg")
+  color: #FFF
+  font-family: 'Source Code Pro', monospace
+  margin: 0
+
+.row
+  display: flex
+  flex-wrap: wrap
+
+.container
+  max-width: 830px
+  margin: 0 auto
+  text-align: center
+
+.hidden
+  display: none !important
+
+header
+  justify-content: center
+  height: 100vh
+  transition: 2s all
+  &.hide
+    height: 150px
+    .flags
+      transform: translateY(-200px)
+      transition: 2s all
+      .flag_pol
+        display: inline-block
+        transition: 2s all
+        transform: translateX(-120px)
+
+      .flag_uk
+        display: inline-block
+        transition: 2s all
+        transform: translateX(120px)
+    p
+      opacity: 0
+      transition: 2s all
+  h1
+    font-size: 3em
+    margin: 0 auto
+    padding: 50px 30px
+    text-align: center
+    text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black
+    text-transform: uppercase
+  .flags
+    a
+      border-radius: 20px
+    img
+      border-radius: 20px
+      height: 50px
+      margin: 50px 100px
+
+#board
+  transition: all 2s
+
+
+.remainingChances
+  flex: 1
+
+.score
+  flex: 1
+
+#secretWord
+  font-size: 24px
+  letter-spacing: .2em
+  padding: 20px
+  text-transform: uppercase
+  width: 100%
+
+.pictureAndAlphabet
+  justify-content: center
+
+.opacityZero
+  opacity: 0
+
+#hangmanPic
+  // to prevent blinking when picture is reloaded
+  max-width: 456px
+  min-width: 456px
+  min-height: 285px
+  position: relative
+  text-align: center
+  img
+    height: 100%
+    left: 0
+    position: absolute
+    transition: all 1.5s
+
+#hangmanPic,
+#alphabet
+  flex: 1
+
+#alphabet
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+
+.letter
+  @include btn
+  height: 40px
+  margin: 5px
+  width: 40px
+
+  &:hover
+    background: #222
+    border: 3px solid #fff
+    color: #FFFFFF
+  &.correct
+    @include change_color(0, 200, 0)
+    border-width: 2px
+    cursor: not-allowed
+  &.wrong
+    @include change_color(200, 0, 0)
+    border-width: 2px
+    cursor: not-allowed
+
+
+#message_lost,
+#message_win
+  flex: 1
+  button
+    @include btn
+    background: transparent
+    height: 50px
+    margin: 0 auto
+    width: 160px
+
+/* For tablets: */
+@media (max-width: 767px)
+  body
+    background: url("pics/background-md.jpg")
+  header
+    h1
+      font-size: 1.5em
+      padding: 20px
+    .flags
+      a
+        border-radius: 20px
+      img
+        border-radius: 20px
+        height: 50px
+        margin: 50px 40px
+        transition: 2s
+    &.hide
+      height: 80px
+      .flags
+        transition: 2s all
+        transform: translateY(-120px)
+        .flag_pol
+          display: inline-block
+          transition: 2s all
+          transform: translateX(-50px)
+        .flag_uk
+          display: inline-block
+          transition: 2s all
+          transform: translateX(50px)
+        img
+          margin: 10px 10px
+          transition: 2s
+          transform: scale(.7)
+      p
+        transform: translateY(0px)
+  #secretWord
+    font-size: 1em
+    min-height: 0
+    padding: 20px 10px
+  #hangmanPic
+    display: none
+
+@media (max-width: 850px)
+  .pictureAndAlphabet
+    flex-direction: column
+  #hangmanPic
+    margin: 0 auto
