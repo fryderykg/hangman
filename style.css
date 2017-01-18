@@ -30,11 +30,11 @@ header {
     header.hide .flags {
       transform: translateY(-200px);
       transition: 2s all; }
-      header.hide .flags .flag_pol {
+      header.hide .flags .flag_pl {
         display: inline-block;
         transition: 2s all;
         transform: translateX(-120px); }
-      header.hide .flags .flag_uk {
+      header.hide .flags .flag_gb {
         display: inline-block;
         transition: 2s all;
         transform: translateX(120px); }
@@ -180,11 +180,11 @@ header {
     header.hide .flags {
       transition: 2s all;
       transform: translateY(-120px); }
-      header.hide .flags .flag_pol {
+      header.hide .flags .flag_pl {
         display: inline-block;
         transition: 2s all;
         transform: translateX(-50px); }
-      header.hide .flags .flag_uk {
+      header.hide .flags .flag_gb {
         display: inline-block;
         transition: 2s all;
         transform: translateX(50px); }

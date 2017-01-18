@@ -165,8 +165,8 @@ function addListeners() {
     }
 }
 // ADD EventListeners at script start
-document.getElementById("flag_pol").addEventListener("click", languageSelect);
-document.getElementById("flag_uk").addEventListener("click", languageSelect);
+document.getElementById("flag_pl").addEventListener("click", languageSelect);
+document.getElementById("flag_gb").addEventListener("click", languageSelect);
 document.getElementById("button_lost").addEventListener("click", start);
 document.getElementById("button_win").addEventListener("click", start);
 
@@ -249,13 +249,13 @@ function changeClassesName(elements, addOrRemove, newClassName) {
 function languageSelect() {
     document.getElementById("header").className = "hide";
     document.getElementById("board").className = "";
-    var elements_uk = document.getElementsByClassName("lang_uk");
-    var elements_pl = document.getElementsByClassName("lang_pl");
+    var elements_en = document.getElementsByClassName("en_gb");
+    var elements_pl = document.getElementsByClassName("pl_pl");
 
-    if (this.id === "flag_pol") {
+    if (this.id === "flag_pl") {
         hangman.language = "pol";
         // HIDE ELEMENTS IN ENGLISH
-        changeClassesName(elements_uk, "add", "hidden");
+        changeClassesName(elements_en, "add", "hidden");
         changeClassesName(elements_pl, "remove", "hidden");
         document.getElementById("slash").className = "hidden";
         // LOAD POLISH WORDS
@@ -265,15 +265,15 @@ function languageSelect() {
             start();
         });
 
-    } else if (this.id === "flag_uk") {
-        hangman.language = "uk";
+    } else if (this.id === "flag_gb") {
+        hangman.language = "en";
         // HIDE ELEMENTS IN POLISH
-        changeClassesName(elements_uk, "remove", "hidden");
+        changeClassesName(elements_en, "remove", "hidden");
         changeClassesName(elements_pl, "add", "hidden");
         document.getElementById("slash").className = "hidden";
         // LOAD ENGLISH WORDS
         loadJSON("./words.json", function(text){
-            hangman.words = JSON.parse(text).words.uk;
+            hangman.words = JSON.parse(text).words.en;
             // START THE GAME
             start();
         });
