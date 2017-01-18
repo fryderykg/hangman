@@ -5,67 +5,67 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
     <title>Hangman Game</title>
   </head>
   <body>
     <div class="container">
       <header class="" id="header">
-        <h1><span class="lang_pl">WISIELEC</span><span class="" id="slash"> / </span><span class="lang_uk">HANGMAN</span></h1>
+        <h1><span class="pl_pl">WISIELEC</span><span class="" id="slash"> / </span><span class="en_gb">HANGMAN</span></h1>
         <p>Wybierz język / Choose language</p>
         <div class="flags">
-          <a href="#" class="flag_pol" id="flag_pol"><img src="pics/pol.GIF" alt="poland flag"></a>
-          <a href="#" class="flag_uk" id="flag_uk"><img src="pics/uk.GIF" alt="uk flag"></a>
+          <a href="#" class="flag_pl" id="flag_pl"><img src="pics/build/pl.gif" alt="poland flag"></a>
+          <a href="#" class="flag_gb" id="flag_gb"><img src="pics/build/gb.gif" alt="great britain flag"></a>
         </div>
       </header>
-      <div class="opacityZero hidden" id="board">
+      <div class="opacity-zero hidden" id="board">
         <div class="row">
-          <p class="remainingChances">
-            <span class="lang_pl">Szanse: </span>
-            <span class="lang_uk">Chances: </span>
+          <p class="remaining-chances">
+            <span class="pl_pl">Szanse: </span>
+            <span class="en_gb">Chances: </span>
             <span id="remainingChances"></span>
           </p>
           <p class="score">
-            <span class="lang_pl">Wynik:</span>
-            <span class="lang_uk">Score:</span>
+            <span class="pl_pl">Wynik:</span>
+            <span class="en_gb">Score:</span>
             <span id="score"></span>
           </p>
         </div>
         <div class="row">
             <div class="" id="secretWord"></div>
         </div>
-        <div class="row pictureAndAlphabet">
+        <div class="row picture-and-alphabet">
             <div id="hangmanPic">
-              <img src="pics/hangman0.png" alt="hangman 0 pic">
-              <img class="opacityZero" id="pic1" src="pics/hangman1.png" alt="hangman 1 pic">
-              <img class="opacityZero" id="pic2" src="pics/hangman2.png" alt="hangman 2 pic">
-              <img class="opacityZero" id="pic3" src="pics/hangman3.png" alt="hangman 3 pic">
-              <img class="opacityZero" id="pic4" src="pics/hangman4.png" alt="hangman 4 pic">
-              <img class="opacityZero" id="pic5" src="pics/hangman5.png" alt="hangman 5 pic">
-              <img class="opacityZero" id="pic6" src="pics/hangman6.png" alt="hangman 6 pic">
-              <img class="opacityZero" id="pic7" src="pics/hangman7.png" alt="hangman 7 pic">
-              <img class="opacityZero" id="pic8" src="pics/hangman8.png" alt="hangman 8 pic">
-              <img class="opacityZero" id="pic9" src="pics/hangman9.png" alt="hangman 9 pic">
+              <img src="pics/build/hangman0.png" alt="hangman 0 pic">
+              <img class="opacity-zero" id="pic1" src="pics/build/hangman1.png" alt="hangman 1 pic">
+              <img class="opacity-zero" id="pic2" src="pics/build/hangman2.png" alt="hangman 2 pic">
+              <img class="opacity-zero" id="pic3" src="pics/build/hangman3.png" alt="hangman 3 pic">
+              <img class="opacity-zero" id="pic4" src="pics/build/hangman4.png" alt="hangman 4 pic">
+              <img class="opacity-zero" id="pic5" src="pics/build/hangman5.png" alt="hangman 5 pic">
+              <img class="opacity-zero" id="pic6" src="pics/build/hangman6.png" alt="hangman 6 pic">
+              <img class="opacity-zero" id="pic7" src="pics/build/hangman7.png" alt="hangman 7 pic">
+              <img class="opacity-zero" id="pic8" src="pics/build/hangman8.png" alt="hangman 8 pic">
+              <img class="opacity-zero" id="pic9" src="pics/build/hangman9.png" alt="hangman 9 pic">
             </div>
             <div class="" id="alphabet"></div>
             <div class="hidden" id="message_lost">
               <p>
-                <span class="lang_pl">PRZEGRAŁEŚ!</span>
-                <span class="lang_uk">YOU LOST!</span>
+                <span class="pl_pl">PRZEGRAŁEŚ!</span>
+                <span class="en_gb">YOU LOST!</span>
               </p>
               <button id="button_lost">
-                <span class="lang_pl">Jeszcze raz?</span>
-                <span class="lang_uk">Play again?</span>
+                <span class="pl_pl">Jeszcze raz?</span>
+                <span class="en_gb">Play again?</span>
               </button>
             </div>
             <div class="hidden" id="message_win">
               <p>
-                <span class="lang_pl">GRATULACJE, WYGRAŁEŚ!</span>
-                <span class="lang_uk">CONGRATULATION, YOU WIN!</span>
+                <span class="pl_pl">GRATULACJE, WYGRAŁEŚ!</span>
+                <span class="en_gb">CONGRATULATION, YOU WIN!</span>
               </p>
               <button id="button_win">
-                <span class="lang_pl">Jeszcze raz?</span>
-                <span class="lang_uk">Play again?</span>
+                <span class="pl_pl">Jeszcze raz?</span>
+                <span class="en_gb">Play again?</span>
               </button>
             </div>
         </div>

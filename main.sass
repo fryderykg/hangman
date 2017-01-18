@@ -25,7 +25,7 @@
 
 body
   background: #333
-  background: url("pics/background-lg.jpg")
+  background: url("pics/build/background-lg.jpg")
   color: #FFF
   font-family: 'Source Code Pro', monospace
   margin: 0
@@ -51,12 +51,12 @@ header
     .flags
       transform: translateY(-200px)
       transition: 2s all
-      .flag_pol
+      .flag_pl
         display: inline-block
         transition: 2s all
         transform: translateX(-120px)
 
-      .flag_uk
+      .flag_gb
         display: inline-block
         transition: 2s all
         transform: translateX(120px)
@@ -82,7 +82,7 @@ header
   transition: all 2s
 
 
-.remainingChances
+.remaining-chances
   flex: 1
 
 .score
@@ -95,10 +95,10 @@ header
   text-transform: uppercase
   width: 100%
 
-.pictureAndAlphabet
+.picture-and-alphabet
   justify-content: center
 
-.opacityZero
+.opacity-zero
   opacity: 0
 
 #hangmanPic
@@ -156,7 +156,7 @@ header
 /* For tablets: */
 @media (max-width: 767px)
   body
-    background: url("pics/background-md.jpg")
+    background: url("pics/build/background-md.jpg")
   header
     h1
       font-size: 1.5em
@@ -174,11 +174,11 @@ header
       .flags
         transition: 2s all
         transform: translateY(-120px)
-        .flag_pol
+        .flag_pl
           display: inline-block
           transition: 2s all
           transform: translateX(-50px)
-        .flag_uk
+        .flag_gb
           display: inline-block
           transition: 2s all
           transform: translateX(50px)
@@ -196,7 +196,7 @@ header
     display: none
 
 @media (max-width: 850px)
-  .pictureAndAlphabet
+  .picture-and-alphabet
     flex-direction: column
   #hangmanPic
     margin: 0 auto

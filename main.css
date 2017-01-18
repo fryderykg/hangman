@@ -4,9 +4,9 @@
 
 body {
   background: #333;
-  background: url("pics/background-lg.jpg");
+  background: url("pics/build/background-lg.jpg");
   color: #FFF;
-  font-family: "Source Code Pro", monospace;
+  font-family: 'Source Code Pro', monospace;
   margin: 0; }
 
 .row {
@@ -30,11 +30,11 @@ header {
     header.hide .flags {
       transform: translateY(-200px);
       transition: 2s all; }
-      header.hide .flags .flag_pol {
+      header.hide .flags .flag_pl {
         display: inline-block;
         transition: 2s all;
         transform: translateX(-120px); }
-      header.hide .flags .flag_uk {
+      header.hide .flags .flag_gb {
         display: inline-block;
         transition: 2s all;
         transform: translateX(120px); }
@@ -58,7 +58,7 @@ header {
 #board {
   transition: all 2s; }
 
-.remainingChances {
+.remaining-chances {
   flex: 1; }
 
 .score {
@@ -66,15 +66,15 @@ header {
 
 #secretWord {
   font-size: 24px;
-  letter-spacing: 0.2em;
+  letter-spacing: .2em;
   padding: 20px;
   text-transform: uppercase;
   width: 100%; }
 
-.pictureAndAlphabet {
+.picture-and-alphabet {
   justify-content: center; }
 
-.opacityZero {
+.opacity-zero {
   opacity: 0; }
 
 #hangmanPic {
@@ -163,8 +163,7 @@ header {
 /* For tablets: */
 @media (max-width: 767px) {
   body {
-    background: url("pics/background-md.jpg"); }
-
+    background: url("pics/build/background-md.jpg"); }
   header h1 {
     font-size: 1.5em;
     padding: 20px; }
@@ -180,11 +179,11 @@ header {
     header.hide .flags {
       transition: 2s all;
       transform: translateY(-120px); }
-      header.hide .flags .flag_pol {
+      header.hide .flags .flag_pl {
         display: inline-block;
         transition: 2s all;
         transform: translateX(-50px); }
-      header.hide .flags .flag_uk {
+      header.hide .flags .flag_gb {
         display: inline-block;
         transition: 2s all;
         transform: translateX(50px); }
@@ -194,19 +193,17 @@ header {
         transform: scale(0.7); }
     header.hide p {
       transform: translateY(0px); }
-
   #secretWord {
     font-size: 1em;
     min-height: 0;
     padding: 20px 10px; }
-
   #hangmanPic {
     display: none; } }
-@media (max-width: 850px) {
-  .pictureAndAlphabet {
-    flex-direction: column; }
 
+@media (max-width: 850px) {
+  .picture-and-alphabet {
+    flex-direction: column; }
   #hangmanPic {
     margin: 0 auto; } }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */

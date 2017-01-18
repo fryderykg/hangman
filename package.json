@@ -1,0 +1,29 @@
+{
+  "name": "hangman-game",
+  "version": "0.2.0",
+  "description": "hangman game",
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fryderykg/hangman.git"
+  },
+  "keywords": [
+    "hangman",
+    "game"
+  ],
+  "author": "FryderykG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fryderykg/hangman/issues"
+  },
+  "homepage": "https://github.com/fryderykg/hangman#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0"
+  }
+}
