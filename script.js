@@ -190,14 +190,10 @@ function check() {
         hangman.playSound("yes");
         //Change color to green
         document.getElementById("letter" + letter_number).className += " correct";
-        // Disable onclick function
-        document.getElementById("letter" + letter_number).setAttribute("onclick",";");
     } else {
         hangman.playSound("no");
         // Change color to red
         document.getElementById("letter" + letter_number).className += " wrong";
-        // Disable onclick function
-        document.getElementById("letter" + letter_number).setAttribute("onclick",";");
         // Add one to mistake number
         hangman.incrementMistakeNumber();
         // Refresh picture
