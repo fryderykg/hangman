@@ -106,14 +106,14 @@ var hangman = {
         } else {
             document.getElementById(picture_id).className = "";
             if (this.mistake_number === 4) {
-                document.getElementById("pic3").className = "opacityZero";
+                document.getElementById("pic3").className = "opacity-zero";
             }
         }
     },
 
     hidePictures: function() {
       for (var i = 1; i < 10; i++){
-          document.getElementById("pic" + i).className = "opacityZero";
+          document.getElementById("pic" + i).className = "opacity-zero";
       }
     },
 
