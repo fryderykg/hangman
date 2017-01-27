@@ -4,10 +4,7 @@
 
 // HANGMAN OBJECT
 var hangman = {
-    alphabet : {
-        pl: "aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż",
-        en: "abcdefghijklmnopqrstuvwxyz"
-    },
+    alphabet : "",
     word: "",
     words: [],
     words_obj: {},
@@ -145,12 +142,12 @@ var hangman = {
 
     // ALPHABET METHOD
     /** Display alphabet buttons on the screen*/
-    displayAlphabet: function(lang) {
+    displayAlphabet: function() {
         var alphabetContent = "";
 
-        for (var i = 0; i < this.alphabet[lang].length; i++) {
+        for (var i = 0; i < this.alphabet.length; i++) {
             var idName = "letter" + i;
-            alphabetContent += '<div class="letter" id="' + idName + '">' + this.alphabet[lang].charAt(i).toUpperCase() + '</div>';
+            alphabetContent += '<div class="letter" id="' + idName + '">' + this.alphabet.charAt(i).toUpperCase() + '</div>';
         }
         document.getElementById("alphabet").innerHTML = alphabetContent;
     },
@@ -283,11 +280,13 @@ function languageSelect() {
         changeClassesName(elements_en, "add", "hidden");
         changeClassesName(elements_pl, "remove", "hidden");
         document.getElementById("slash").className = "hidden";
+        // SET POLISH ALPHABET
+        hangman.alphabet = "aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż";
         // LOAD POLISH WORDS
         loadJSON("./words.json", function(text){
             hangman.words_obj = JSON.parse(text).words.pl;
             // START THE GAME
-            start("pl");
+            start();
         });
 
     } else if (this.id === "flag_gb") {
@@ -296,11 +295,13 @@ function languageSelect() {
         changeClassesName(elements_en, "remove", "hidden");
         changeClassesName(elements_pl, "add", "hidden");
         document.getElementById("slash").className = "hidden";
+        // SET POLISH ALPHABET
+        hangman.alphabet = "abcdefghijklmnopqrstuvwxyz";
         // LOAD ENGLISH WORDS
         loadJSON("./words.json", function(text){
             hangman.words_obj = JSON.parse(text).words.en;
             // START THE GAME
-            start("en");
+            start();
         });
     }
     // Reset score when change language
@@ -308,13 +309,13 @@ function languageSelect() {
 }
 
 // MAIN FUNCTION
-function start(lang) {
+function start() {
     hangman.reset();
     hangman.setCategory();
     hangman.setWord();
     hangman.hideWord();
     // CREATE BOARD
-    hangman.displayAlphabet(lang);
+    hangman.displayAlphabet();
     hangman.displayHiddenWord();
     hangman.displayCategory();
     hangman.displayRemainingChances();
