@@ -14,8 +14,8 @@ body {
   flex-wrap: wrap; }
 
 .container {
-  max-width: 830px;
   margin: 0 auto;
+  max-width: 830px;
   text-align: center; }
 
 .hidden {
@@ -32,12 +32,12 @@ header {
       transition: 2s all; }
       header.hide .flags .flag_pl {
         display: inline-block;
-        transition: 2s all;
-        transform: translateX(-120px); }
+        transform: translateX(-120px);
+        transition: 2s all; }
       header.hide .flags .flag_gb {
         display: inline-block;
-        transition: 2s all;
-        transform: translateX(120px); }
+        transform: translateX(120px);
+        transition: 2s all; }
     header.hide p {
       opacity: 0;
       transition: 2s all; }
@@ -100,15 +100,15 @@ header {
   justify-content: space-around; }
 
 .letter {
+  border-radius: 10px;
+  border: 2px solid gray;
+  box-shadow: 1px 3px 5px black;
   color: #FFF;
+  cursor: pointer;
   font-size: 22px;
   line-height: 22px;
-  border-radius: 10px;
-  text-align: center;
   padding: 9px;
-  border: 2px solid gray;
-  cursor: pointer;
-  box-shadow: 1px 3px 5px black;
+  text-align: center;
   height: 40px;
   margin: 5px;
   width: 40px; }
@@ -140,18 +140,18 @@ header {
   flex: 1; }
   #message_lost button,
   #message_win button {
+    border-radius: 10px;
+    border: 2px solid gray;
+    box-shadow: 1px 3px 5px black;
     color: #FFF;
+    cursor: pointer;
     font-size: 22px;
     line-height: 22px;
-    border-radius: 10px;
-    text-align: center;
     padding: 9px;
-    border: 2px solid gray;
-    cursor: pointer;
-    box-shadow: 1px 3px 5px black;
+    text-align: center;
     background: transparent;
     height: 50px;
-    margin: 0 auto;
+    margin: 30px auto;
     width: 160px; }
     #message_lost button:hover,
     #message_win button:hover {
@@ -178,20 +178,20 @@ header {
   header.hide {
     height: 80px; }
     header.hide .flags {
-      transition: 2s all;
-      transform: translateY(-120px); }
+      transform: translateY(-120px);
+      transition: 2s all; }
       header.hide .flags .flag_pl {
         display: inline-block;
-        transition: 2s all;
-        transform: translateX(-50px); }
+        transform: translateX(-50px);
+        transition: 2s all; }
       header.hide .flags .flag_gb {
         display: inline-block;
-        transition: 2s all;
-        transform: translateX(50px); }
+        transform: translateX(50px);
+        transition: 2s all; }
       header.hide .flags img {
         margin: 10px 10px;
-        transition: 2s;
-        transform: scale(0.7); }
+        transform: scale(0.7);
+        transition: 2s; }
     header.hide p {
       transform: translateY(0px); }
   #secretWord {
