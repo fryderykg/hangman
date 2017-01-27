@@ -1,7 +1,7 @@
 {
   "words": {
-    "pol":
-      [
+    "pol": {
+      "przysłowia": [
         "apetyt rośnie w miarę jedzenia",
         "bez pracy nie ma kołaczy",
         "biednemu zawsze wiatr w oczy",
@@ -22,7 +22,9 @@
         "gdyby kózka nie skakała",
         "gdzie diabeł nie może tam babę pośle",
         "komu w drogę temu czas",
-        "lepiej późno niż wcale",
+        "lepiej późno niż wcale"
+      ],
+      "film": [
         "adwokat diabła",
         "buntownik z wyboru",
         "bękarty wojny",
@@ -99,7 +101,9 @@
         "zielona mila",
         "łowca androidów",
         "śniadanie u tiffanyego",
-        "życie jest piękne",
+        "życie jest piękne"
+      ],
+      "aktor": [
         "andrzej chyra",
         "janusz gajos",
         "jerzy stuhr",
@@ -109,9 +113,10 @@
         "krystyna janda",
         "marek kondrat",
         "robert gonera"
-      ],
-    "en":
-      [
+      ]
+    },
+    "en": {
+      "proverb": [
         "a chain is only as strong as its weakest link",
         "a penny saved is a penny earned",
         "a picture is worth a thousand words",
@@ -149,8 +154,10 @@
         "two heads are better than one",
         "two wrongs dont make a right",
         "when in rome do as the romans",
-        "when the going gets tough the tough get going",
-        "aliens",
+        "when the going gets tough the tough get going"
+      ],
+      "movie": [
+        "alien",
         "american beauty",
         "apocalypse now",
         "back to the future",
@@ -194,7 +201,10 @@
         "the pianist",
         "the silence of the lambs",
         "toy story",
-        "whiplash",
+        "whiplash"
+
+      ],
+      "actor": [
         "al pacino",
         "alec guinness",
         "anthony hopkins",
@@ -212,5 +222,6 @@
         "sean connery",
         "tom hanks"
       ]
+    }
   }
 }
