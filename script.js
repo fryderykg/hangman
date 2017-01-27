@@ -33,7 +33,7 @@ var hangman = {
     },
 
     incrementScore: function() {
-        this.score++;
+        this.score += this.remaining_chances;
     },
 
     resetScore: function() {
@@ -176,7 +176,7 @@ function check() {
     var letterInMessage = false;
 
     this.removeEventListener("click", check);
-
+    // Check if clicked letter is in word
     for(var i = 0; i < hangman.getWordLength(); i++) {
         //  Compare word letter at position "i" to alphabet letter at position "letter_number"
         if (hangman.getWordCharAt(i) === hangman.getAlphabetLetter(letter_number)) {
