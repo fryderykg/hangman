@@ -4,9 +4,15 @@
 
 // HANGMAN OBJECT
 var hangman = {
-    alphabet: "aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż",
+    alphabet : {
+        pl: "aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż",
+        en: "abcdefghijklmnopqrstuvwxyz"
+    },
     word: "",
     words: [],
+    words_obj: {},
+    categories: "",
+    category: "",
     word_hidden: "",
     language: "",
     mistake_number: 0,
@@ -41,14 +47,23 @@ var hangman = {
     },
 
     // WORD METHOD
-    /** Set random word from words */
-    setWord: function() {
-        this.word = this.words[Math.floor(Math.random() * this.words.length)].toLowerCase();
+    setCategory: function() {
+        /** Category list */
+        this.categories = Object.getOwnPropertyNames(this.words_obj);
+        /** Pick one category from categories */
+        this.category = this.categories[Math.floor(Math.random() * this.categories.length)];
     },
 
-    /** Display hidden word on screen*/
-    displayHiddenWord: function() {
-        document.getElementById("secretWord").innerHTML = '<p>' + this.word_hidden + '</p>';
+    displayCategory: function() {
+        document.getElementById("category").innerHTML = '<p>' + this.category.toUpperCase() + '</p>';
+    },
+
+    setWord: function() {
+        /** list of all words */
+        this.words = this.words_obj[this.category];
+        /** Pick ons word from words*/
+        this.word = this.words[Math.floor(Math.random() * this.words.length)].toLowerCase();
+        // this.word = this.words[Math.floor(Math.random() * this.words.length)].toLowerCase();
     },
 
     getWordLength: function() {
@@ -64,6 +79,11 @@ var hangman = {
                 this.word_hidden += " ";
             }
         }
+    },
+
+    /** Display hidden word on screen*/
+    displayHiddenWord: function() {
+        document.getElementById("secretWord").innerHTML = '<p>' + this.word_hidden + '</p>';
     },
 
     /** Return letter at position number */
@@ -125,12 +145,12 @@ var hangman = {
 
     // ALPHABET METHOD
     /** Display alphabet buttons on the screen*/
-    displayAlphabet: function() {
+    displayAlphabet: function(lang) {
         var alphabetContent = "";
 
-        for (var i = 0; i < this.alphabet.length; i++) {
+        for (var i = 0; i < this.alphabet[lang].length; i++) {
             var idName = "letter" + i;
-            alphabetContent += '<div class="letter" id="' + idName + '">' + this.alphabet.charAt(i).toUpperCase() + '</div>';
+            alphabetContent += '<div class="letter" id="' + idName + '">' + this.alphabet[lang].charAt(i).toUpperCase() + '</div>';
         }
         document.getElementById("alphabet").innerHTML = alphabetContent;
     },
@@ -258,16 +278,16 @@ function languageSelect() {
     var elements_pl = document.getElementsByClassName("pl_pl");
 
     if (this.id === "flag_pl") {
-        hangman.language = "pol";
+        hangman.language = "pl";
         // HIDE ELEMENTS IN ENGLISH
         changeClassesName(elements_en, "add", "hidden");
         changeClassesName(elements_pl, "remove", "hidden");
         document.getElementById("slash").className = "hidden";
         // LOAD POLISH WORDS
         loadJSON("./words.json", function(text){
-            hangman.words = JSON.parse(text).words.pol;
+            hangman.words_obj = JSON.parse(text).words.pl;
             // START THE GAME
-            start();
+            start("pl");
         });
 
     } else if (this.id === "flag_gb") {
@@ -278,9 +298,9 @@ function languageSelect() {
         document.getElementById("slash").className = "hidden";
         // LOAD ENGLISH WORDS
         loadJSON("./words.json", function(text){
-            hangman.words = JSON.parse(text).words.en;
+            hangman.words_obj = JSON.parse(text).words.en;
             // START THE GAME
-            start();
+            start("en");
         });
     }
     // Reset score when change language
@@ -288,13 +308,15 @@ function languageSelect() {
 }
 
 // MAIN FUNCTION
-function start() {
+function start(lang) {
     hangman.reset();
+    hangman.setCategory();
     hangman.setWord();
     hangman.hideWord();
     // CREATE BOARD
-    hangman.displayAlphabet();
+    hangman.displayAlphabet(lang);
     hangman.displayHiddenWord();
+    hangman.displayCategory();
     hangman.displayRemainingChances();
     hangman.displayScore();
     // EVENT LISTENERS
