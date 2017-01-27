@@ -100,9 +100,15 @@ var hangman = {
         var picture_id = "pic" + this.mistake_number;
         if (this.mistake_number >= 9) {
             this.resetScore();
+            // Remove hidden class from picture
             document.getElementById(picture_id).className = "";
+            // Hide alphabet on the end of the game
             document.getElementById("alphabet").className += "hidden";
+            // Remove hidden class from message_lost
             document.getElementById("message_lost").className = "";
+            // When player lost display correct word
+            this.setWordHidden(this.getWord());
+            // this.displayHiddenWord()
         } else {
             document.getElementById(picture_id).className = "";
             if (this.mistake_number === 4) {
@@ -190,6 +196,17 @@ function check() {
         hangman.playSound("yes");
         //Change color to green
         document.getElementById("letter" + letter_number).className += " correct";
+
+        // Check if player find the answer
+        if (hangman.getWord() === hangman.getWordHidden()) {
+            hangman.incrementScore();
+            hangman.displayScore();
+            /** hide alphabet*/
+            document.getElementById("alphabet").className += "hidden";
+            /** show message win */
+            document.getElementById("message_win").className = "";
+        }
+
     } else {
         hangman.playSound("no");
         // Change color to red
@@ -204,15 +221,7 @@ function check() {
     hangman.displayHiddenWord();
     hangman.displayRemainingChances();
 
-    // Check if player find the answer
-    if (hangman.getWord() === hangman.getWordHidden()) {
-        hangman.incrementScore();
-        hangman.displayScore();
-        /** hide alphabet*/
-        document.getElementById("alphabet").className += "hidden";
-        /** show message win */
-        document.getElementById("message_win").className = "";
-    }
+
 }
 
 // LOAD WORDS LIST FROM JSON
