@@ -57,11 +57,12 @@ header {
 
 #board {
   transition: all 2s; }
+  #board p {
+    margin: 5px; }
 
-.remaining-chances {
-  flex: 1; }
-
-.score {
+.remaining-chances,
+.score,
+.category {
   flex: 1; }
 
 #secretWord {
@@ -79,8 +80,8 @@ header {
 
 #hangmanPic {
   max-width: 456px;
-  min-width: 456px;
   min-height: 285px;
+  min-width: 456px;
   position: relative;
   text-align: center; }
   #hangmanPic img {
