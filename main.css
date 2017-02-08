@@ -60,6 +60,26 @@ header {
   #board p {
     margin: 5px; }
 
+.btn-help {
+  border-radius: 10px;
+  border: 2px solid gray;
+  box-shadow: 1px 3px 5px black;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 22px;
+  padding: 9px;
+  text-align: center;
+  background: transparent;
+  height: 50px;
+  width: 50px;
+  z-index: 2; }
+  .btn-help:hover {
+    border: 3px solid;
+    background: rgba(0, 200, 0, 0.2);
+    border-color: rgba(0, 200, 0, 0.8);
+    color: rgba(0, 200, 0, 0.8); }
+
 .remaining-chances,
 .score,
 .category {
@@ -68,7 +88,7 @@ header {
 #secretWord {
   font-size: 24px;
   letter-spacing: .2em;
-  padding: 20px;
+  padding: 50px;
   text-transform: uppercase;
   width: 100%; }
 
@@ -113,8 +133,7 @@ header {
   margin: 5px;
   width: 40px; }
   .letter:hover {
-    background: #222;
-    border: 3px solid #fff;
+    border: 3px solid;
     background: rgba(0, 200, 0, 0.2);
     border-color: rgba(0, 200, 0, 0.8);
     color: rgba(0, 200, 0, 0.8); }
@@ -155,8 +174,7 @@ header {
     width: 160px; }
     #message_lost button:hover,
     #message_win button:hover {
-      background: #222;
-      border: 3px solid #fff;
+      border: 3px solid;
       background: rgba(0, 200, 0, 0.2);
       border-color: rgba(0, 200, 0, 0.8);
       color: rgba(0, 200, 0, 0.8); }
@@ -197,7 +215,7 @@ header {
   #secretWord {
     font-size: 1em;
     min-height: 0;
-    padding: 20px 10px; }
+    padding: 0 10px 15px; }
   #hangmanPic {
     display: none; } }
 
@@ -206,5 +224,47 @@ header {
     flex-direction: column; }
   #hangmanPic {
     margin: 0 auto; } }
+
+/* The Modal (background) */
+.modal {
+  opacity: 0;
+  position: fixed;
+  z-index: -10;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8); }
+  @media (max-width: 768px) {
+    .modal {
+      padding-top: 20px; } }
+
+/* Modal Content */
+.modal-content {
+  background-color: black;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  min-height: 80%; }
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 95%; } }
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; }
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */

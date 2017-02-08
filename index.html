@@ -25,6 +25,9 @@
             <span class="en_gb">Chances: </span>
             <span id="remainingChances"></span>
           </p>
+          <!-- Trigger/Open The Modal -->
+          <button id="btnHelp" class="btn-help">?</button>
+
           <p class="score">
             <span class="pl_pl">Wynik:</span>
             <span class="en_gb">Score:</span>
@@ -76,6 +79,37 @@
         </div>
       </div>
     </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <span class="pl_pl">
+          <p>Zasady gry:</p>
+          <p>Komputer losuje kategorię hasła (przysłowie, film, aktor), która jest wyświetlana na górze strony.</p>
+          <p>Zadaniem gracza jest odgadnięcie hasła.</p>
+          <p>Jeśli gracz wybierze literę, która występuje w haśle, litera w haśle odsłania się.</p>
+          <p>Jeśli gracz wybierze literę, która nie występuje w haśle, traci jedną szansę.</p>
+          <p>W każdej rundzie jest 9 szans.</p>
+          <p>Jeśli gracz straci wszystkie 9 szans, gra się kończy.</p>
+          <p>Punkty przyznawane są po odgadnięciu hasła.</p>
+          <p>Ilość zdobytych punktów odpowiada liczbie pozostałych szans w danej rundzie.</p>
+        </span>
+        <span class="en_gb">
+          <p>Rules:</p>
+          <p>The computer draws the category of the word/words to guess (proverb, film, actor) which can be seen at the top of the page.</p>
+          <p>The player has to guess the word.</p>
+          <p>If the player chooses a letter which occurs in the word, the letter appears.</p>
+          <p>If the player chooses a letter which does not appear in the word, s/he loses one chance.</p>
+          <p>There are 9 chances in each round.</p>
+          <p>If the player loses all 9 chances, the game is over.</p>
+          <p>The points are added after the word is guessed.</p>
+          <p>The number of scored points corresponds to the number of chances left in this round.</p>
+        </span>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
